@@ -44,7 +44,7 @@ public class UploadsServiceTest {
         RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
         requestSpecBuilder = new RequestSpecBuilder()
                 .setBaseUri(Config.getProperty("api.base_url"))
-                .setPort(5000)
+                .setPort(Integer.parseInt(Config.getProperty("api.port")))
                 .setAccept(ContentType.JSON);
         requestJSONSpec = requestSpecBuilder.setContentType(ContentType.JSON).build();
     }
